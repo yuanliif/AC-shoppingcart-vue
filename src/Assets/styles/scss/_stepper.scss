@@ -1,0 +1,47 @@
+@mixin getStepNums($num) {
+  @for $i from 1 through $num {
+    &:nth-child(odd) .circle-container::before {
+      content: "#{$i}";
+      line-height: 24px;
+    }
+  }
+}
+.stepper-container {
+  height: 24px;
+  white-space: nowrap;
+  .step {
+    margin: 0 32px;
+    display: flex;
+    @include getStepNums(3);
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    .circle-container {
+      height: 24px;
+      width: 24px;
+      margin-right: 8px;
+      background-color: transparent;
+      border-radius: 50%;
+      color: var(--disable-gray);
+      border: 1px solid var(--disable-gray);
+      text-align: center;
+      + p {
+        line-height: 2rem;
+        font-size: 1rem;
+        margin-left: 9px;
+        color: var(--disable-gray);
+      }
+    }
+  }
+  .connect-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-right: 32px;
+    background-color: #000;
+    line-height: 1rem;
+  }
+}

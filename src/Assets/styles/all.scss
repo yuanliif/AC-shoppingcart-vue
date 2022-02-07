@@ -1,0 +1,18 @@
+@import "./scss/reset.scss";
+@import "./scss/color.scss";
+@import "./scss/stepper.scss";
+
+html {
+  font-size: 1rem;
+  font-family: "Noto Sans TC", sans-serif;
+  min-width: 350px;
+  color: var(--main-font);
+}
+body {
+  background: var(--body-bg);
+}
+#main-app {
+  min-width: 350px;
+  position: relative;
+}
+
