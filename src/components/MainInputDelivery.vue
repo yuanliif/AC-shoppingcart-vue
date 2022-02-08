@@ -3,24 +3,24 @@
     <h3 class="form-title">運送方式</h3>
     <div class="form-container delivery-method">
       <div class="form-row">
-        <input type="radio" name="delivery" />
-        <div class="wrapper">
+        <input type="radio" name="delivery" id="free-delivery"/>
+        <label class="wrapper" for="free-delivery">
           <div class="wrapper-item">
             <p>標準運送</p>
             <span>免費</span>
           </div>
           <span>約3~7個工作天</span>
-        </div>
+        </label>
       </div>
       <div class="form-row">
-        <input type="radio" name="delivery" />
-        <div class="wrapper">
+        <input type="radio" name="delivery" id="paid-delivery"/>
+        <label class="wrapper" for="paid-delivery">
           <div class="wrapper-item">
             <p>DHL 貨運</p>
             <span>$500</span>
           </div>
           <span>48小時內送達</span>
-        </div>
+        </label>
       </div>
     </div>
   </div>

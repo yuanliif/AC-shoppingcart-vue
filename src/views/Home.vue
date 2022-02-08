@@ -4,7 +4,7 @@
       <h2 class="my-5 fw-bold">結帳</h2>
       <div class="left-container col-7">
         <!-- stepper -->
-        <MainStepper />
+        <MainStepper :step="step" />
         <form class="form" @submit.prevent>
           <!-- input group -->
           <div class="input-group">
