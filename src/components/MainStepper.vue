@@ -1,6 +1,6 @@
 <template>
   <ul
-    class="stepper-container d-flex justify-content-between align-items-center mb-5"
+    class="stepper-container d-flex justify-content-between align-items-center mb-4"
   >
     <li class="step active">
       <div class="circle-container"></div>

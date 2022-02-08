@@ -16,7 +16,7 @@
         <!-- button -->
         <MainButtonGroup />
       </div>
-      <div class="right-container col-5">
+      <div class="right-container d-flex flex-column col-5">
         <h4 class="fw-bold">購物籃</h4>
         <!-- items -->
         <MainCartItems />
@@ -57,15 +57,13 @@ export default {
 <style scoped>
 form {
   width: 100%;
-  height: 100%;
+  height: 85%;
   display: flex;
 }
 .right-container {
   border: var(--light-gray) 1px solid;
-  display: flex;
-  flex-direction: column;
   border-radius: 8px;
-  padding: 32px 16px 0;
+  padding: 32px 24px 0;
   color: var(--main-font);
   background-color: var(--lower-content);
 }
