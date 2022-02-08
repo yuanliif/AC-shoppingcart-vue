@@ -23,15 +23,14 @@
     .circle-container {
       height: 24px;
       width: 24px;
-      margin-right: 8px;
+      position: relative;
       background-color: transparent;
       border: 1px solid var(--disable-gray);
       border-radius: 50%;
       color: var(--disable-gray);
       text-align: center;
       + p {
-        margin-left: 9px;
-        line-height: 2rem;
+        margin-left: 8px;
         color: var(--disable-gray);
       }
     }
@@ -41,5 +40,29 @@
     width: 100%;
     display: block;
     background-color: var(--disable-gray);
+  }
+}
+
+.stepper-container .step.active {
+  + .connect-line {
+    background: var(--main-font);
+  }
+  .circle-container {
+    border: 1px solid var(--main-font);
+    color: var(--main-font);
+    + p {
+      color: var(--main-font);
+    }
+  }
+}
+.stepper-container .step.done {
+  &::before {
+    content: "\2714";
+    color: var(--white);
+    position: absolute;
+    z-index: 1;
+  }
+  .circle-container {
+    background-color: var(--main-font);
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="part" style="display:none">
+  <div class="part" v-show="step===3">
     <h2 class="form-title">付款資訊</h2>
     <div class="form-container payment-method">
       <div class="row">
@@ -28,3 +28,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    step: {
+      type: Number,
+      required: true,
+    },
+  },
+};
+</script>

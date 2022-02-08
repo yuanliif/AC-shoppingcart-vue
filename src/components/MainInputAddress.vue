@@ -1,5 +1,5 @@
 <template>
-  <div class="part" >
+  <div class="part" v-show="step===1">
     <h3 class="form-title">寄送地址</h3>
     <div class="form-container address-method">
       <div class="row">
@@ -62,3 +62,14 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    step: {
+      type: Number,
+      required: true,
+    },
+  },
+};
+</script>

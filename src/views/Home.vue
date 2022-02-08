@@ -5,16 +5,20 @@
       <div class="left-container col-7">
         <!-- stepper -->
         <MainStepper />
-        <form class="form">
+        <form class="form" @submit.prevent>
           <!-- input group -->
           <div class="input-group">
-            <MainInputAddress />
-            <MainInputDelivery />
-            <MainInputPayment />
+            <MainInputAddress :step="step" />
+            <MainInputDelivery :step="step" />
+            <MainInputPayment :step="step" />
           </div>
         </form>
         <!-- button -->
-        <MainButtonGroup />
+        <MainButtonGroup
+          :step="step"
+          @next-step="nextStep"
+          @previous-step="previousStep"
+        />
       </div>
       <div class="right-container d-flex flex-column col-5">
         <h4 class="fw-bold">購物籃</h4>
@@ -35,6 +39,26 @@ import MainInputPayment from "../components/MainInputPayment.vue";
 import MainButtonGroup from "../components/MainButtonGroup.vue";
 import MainCartItems from "../components/MainCartItems.vue";
 import MainCartSum from "../components/MainCartSum.vue";
+
+const dummyData = {
+  products: [
+    {
+      id: 1,
+      name: "破壞補丁修身牛仔褲",
+      price: 3999,
+      quantity: 50,
+      image: "./../assets/images/ripped-jeans@2x.png",
+    },
+    {
+      id: 2,
+      name: "刷色直筒牛仔褲",
+      price: 1999,
+      quantity: 50,
+      image: "./../assets/images/staight-jeans@2x.png",
+    },
+  ],
+};
+
 export default {
   name: "app",
   components: {
@@ -48,8 +72,38 @@ export default {
   },
   data() {
     return {
-      currentPage: "",
+      step: 1,
+      products: [],
+      totalAmount: 0,
+      info: {
+        gender: "",
+        name: "",
+        tel: "",
+        email: "",
+        city: "",
+        address: "",
+        method: "",
+        deliveryFee: 0,
+        cardName: "",
+        cardNum: "",
+        validity: "",
+        cvc: "",
+      },
     };
+  },
+  methods: {
+    fetchData() {
+      this.products = dummyData.products;
+    },
+    nextStep() {
+      return this.step++;
+    },
+    previousStep() {
+      return this.step--;
+    },
+  },
+  mounted() {
+    this.fetchData();
   },
 };
 </script>
