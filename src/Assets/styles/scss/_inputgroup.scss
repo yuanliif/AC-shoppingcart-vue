@@ -3,18 +3,18 @@
   width: 100%;
   .form-title {
     margin: 24px 0;
+    font-weight: bold;
     color: var(--main-font);
   }
   .form-container {
     height: 100%;
+    width: 100%;
     border-bottom: 2px solid var(--light-gray);
     &:last-child {
       margin-bottom: 32px;
     }
     .form-row {
       margin-bottom: 48px;
-      display: flex;
-      flex-direction: column;
       > label {
         font-size: 0.75rem;
         line-height: 1rem;

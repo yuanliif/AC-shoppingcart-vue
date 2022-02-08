@@ -1,7 +1,7 @@
 <template>
   <ul class="cart-list">
     <li class="item">
-      <img src="" alt="" class="item-avatar" />
+      <img src="./../assets/images/ripped-jeans@2x.png" alt="" class="item-avatar" />
       <div class="item-content">
         <div class="item-wrapper">
           <p>破壞補丁修身牛仔褲</p>
@@ -15,7 +15,7 @@
       </div>
     </li>
     <li class="item">
-      <img src="" alt="" class="item-avatar" />
+      <img src="./../assets/images/straight-jeans@2x.png" alt="" class="item-avatar" />
       <div class="item-content">
         <div class="item-wrapper">
           <p>刷色直筒牛仔褲</p>

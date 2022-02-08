@@ -1,8 +1,6 @@
-@import "./inputgroup";
 
 .delivery-method .form-row {
   display: flex;
-  flex-flow: row nowrap;
   border-radius: 4px;
   @include border();
   input[type="radio"] {
@@ -22,23 +20,18 @@
     flex-direction: column;
     margin: 11px 20px 11px 0px;
     font-weight: bold;
+    font-size: 0.75rem;
     color: var(--main-font);
     span {
-      font-size: 0.75rem;
-      line-height: 1rem;
       color: var(--label-gray);
     }
     .wrapper-item {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
       p {
-        line-height: 1.25rem;
         font-size: .875rem;
       }
       span {
-        line-height: 1rem;
-        font-size: 0.75rem;
         align-self: flex-end;
       }
     }

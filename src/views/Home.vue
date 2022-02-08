@@ -17,7 +17,7 @@
         <MainButtonGroup />
       </div>
       <div class="right-container col-5">
-        <h4>購物籃</h4>
+        <h4 class="fw-bold">購物籃</h4>
         <!-- items -->
         <MainCartItems />
         <!-- sum -->
@@ -60,7 +60,13 @@ form {
   height: 100%;
   display: flex;
 }
-.input-group {
-
+.right-container {
+  border: var(--light-gray) 1px solid;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 32px 16px 0;
+  color: var(--main-font);
+  background-color: var(--lower-content);
 }
 </style>

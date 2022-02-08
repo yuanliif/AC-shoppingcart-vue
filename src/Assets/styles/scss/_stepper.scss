@@ -2,7 +2,7 @@
   @for $i from 1 through $num {
     &:nth-child(#{$i}) .circle-container::before {
       content: "#{($i + 1) / 2}";
-      line-height: 24px;
+      line-height: 1.5rem;
     }
   }
 }
@@ -31,7 +31,6 @@
       text-align: center;
       + p {
         line-height: 2rem;
-        font-size: 1rem;
         margin-left: 9px;
         color: var(--disable-gray);
       }
@@ -40,8 +39,7 @@
   .connect-line {
     display: block;
     width: 100%;
-    height: 2px;
+    height: 1px;
     background-color: var(--disable-gray);
-    line-height: 1rem;
   }
 }

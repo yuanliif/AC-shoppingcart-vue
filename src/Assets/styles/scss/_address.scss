@@ -1,5 +1,3 @@
-@import "./inputgroup";
-
 .form-container input {
   @include input;
   &::-webkit-input-placeholder {

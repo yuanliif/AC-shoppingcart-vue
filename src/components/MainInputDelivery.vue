@@ -1,6 +1,6 @@
 <template>
-  <div class="part" >
-    <h2 class="form-title">運送方式</h2>
+  <div class="part" style="display:none">
+    <h3 class="form-title">運送方式</h3>
     <div class="form-container delivery-method">
       <div class="form-row">
         <input type="radio" name="delivery" />

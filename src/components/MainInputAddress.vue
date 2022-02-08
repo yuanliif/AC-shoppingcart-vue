@@ -1,8 +1,8 @@
 <template>
-  <div class="part" style="display:none">
-    <h3 class="form-title fw-bold">寄送地址</h3>
+  <div class="part" >
+    <h3 class="form-title">寄送地址</h3>
     <div class="form-container address-method">
-      <div class="row d-flex justify-content-between gx-4">
+      <div class="row">
         <div class="col-4">
           <div class="form-row">
             <label for="">稱謂</label>
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-between gx-4">
+      <div class="row">
         <div class="col">
           <div class="form-row">
             <label for="">電話</label
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <div class="row d-flex justify-content-between gx-4">
+      <div class="row">
         <div class="col-4">
           <div class="form-row">
             <label for="">縣市</label>
