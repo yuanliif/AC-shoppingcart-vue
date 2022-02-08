@@ -1,7 +1,7 @@
 <template>
   <div class="container p-5">
     <div class="row gx-5">
-      <h2 class="my-5">結帳</h2>
+      <h2 class="my-5 fw-bold">結帳</h2>
       <div class="left-container col-7">
         <!-- stepper -->
         <MainStepper />
@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import MainStepper from "./../componenets/MainStepper.vue";
-import MainInputAddress from "./../componenets/MainInputAddress.vue";
-import MainInputDelivery from "./../componenets/MainInputDelivery.vue";
-import MainInputPayment from "./../componenets/MainInputPayment.vue";
-import MainButtonGroup from "./../componenets/MainButtonGroup.vue";
-import MainCartItems from "./../componenets/MainCartItems.vue";
-import MainCartSum from "./../componenets/MainCartSum.vue";
+import MainStepper from "../components/MainStepper.vue";
+import MainInputAddress from "../components/MainInputAddress.vue";
+import MainInputDelivery from "../components/MainInputDelivery.vue";
+import MainInputPayment from "../components/MainInputPayment.vue";
+import MainButtonGroup from "../components/MainButtonGroup.vue";
+import MainCartItems from "../components/MainCartItems.vue";
+import MainCartSum from "../components/MainCartSum.vue";
 export default {
   name: "app",
   components: {
@@ -48,8 +48,19 @@ export default {
   },
   data() {
     return {
-      currentPage: ""
-    }
-  }
+      currentPage: "",
+    };
+  },
 };
 </script>
+
+<style scoped>
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.input-group {
+
+}
+</style>

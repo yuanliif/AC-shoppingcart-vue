@@ -1,0 +1,25 @@
+@mixin input {
+  border: 1px var(--dark-gray) solid;
+  border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--body-bg);
+}
+@mixin border {
+  border: var(--dark-gray) 1px solid;
+}
+
+html {
+  font-size: 1rem;
+  font-family: "Noto Sans TC", sans-serif;
+  min-width: 350px;
+  color: var(--main-font);
+}
+body {
+  background: var(--body-bg);
+}
+#main-app {
+  min-width: 350px;
+  position: relative;
+}

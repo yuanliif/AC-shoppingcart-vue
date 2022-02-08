@@ -1,0 +1,26 @@
+@import "./inputgroup";
+
+.form-container input {
+  @include input;
+  &::-webkit-input-placeholder {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--placeholder-gray);
+  }
+}
+
+.form-container select {
+  @include input;
+  font-size: 0.75rem;
+  option {
+    background-color: var(--light-gray);
+  }
+  &:invalid,
+  option[value=""] {
+    color: var(--placeholder-gray);
+  }
+}
+
+#gender-type {
+  color: var(--placeholder-gray);
+}
