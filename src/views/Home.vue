@@ -23,7 +23,7 @@
       <div class="right-container d-flex flex-column col-5">
         <h4 class="fw-bold">購物籃</h4>
         <!-- items -->
-        <MainCartItems />
+        <MainCartItems :initial-products="products"/>
         <!-- sum -->
         <MainCartSum />
       </div>
@@ -46,14 +46,14 @@ const dummyData = {
       id: 1,
       name: "破壞補丁修身牛仔褲",
       price: 3999,
-      quantity: 50,
+      quantity: 1,
       image: "./../assets/images/ripped-jeans@2x.png",
     },
     {
       id: 2,
       name: "刷色直筒牛仔褲",
       price: 1999,
-      quantity: 50,
+      quantity: 1,
       image: "./../assets/images/staight-jeans@2x.png",
     },
   ],
@@ -74,7 +74,6 @@ export default {
     return {
       step: 1,
       products: [],
-      totalAmount: 0,
       info: {
         gender: "",
         name: "",
@@ -88,6 +87,12 @@ export default {
         cardNum: "",
         validity: "",
         cvc: "",
+      },
+      cart: {
+        rippedJeansAmount: 0,
+        straightJeansAmount: 0,
+        fee: 0,
+        totalAmount: 0,
       },
     };
   },

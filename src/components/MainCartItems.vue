@@ -1,32 +1,34 @@
 <template>
   <ul class="cart-list">
-    <li class="item">
-      <img src="./../assets/images/ripped-jeans@2x.png" alt="" class="item-avatar" />
+    <li class="item" v-for="product in products" :key="product.id">
+      <img :src="product.image" alt="" class="item-avatar" />
       <div class="item-content">
         <div class="item-wrapper">
-          <p>破壞補丁修身牛仔褲</p>
+          <p>{{ product.name }}</p>
           <div class="button-wrapper">
             <button class="plus">+</button>
-            <p class="num">1</p>
+            <p class="num">{{ product.quantity }}</p>
             <button class="minus">-</button>
           </div>
         </div>
-        <span>$3,999</span>
-      </div>
-    </li>
-    <li class="item">
-      <img src="./../assets/images/straight-jeans@2x.png" alt="" class="item-avatar" />
-      <div class="item-content">
-        <div class="item-wrapper">
-          <p>刷色直筒牛仔褲</p>
-          <div class="button-wrapper">
-            <button class="plus">+</button>
-            <p class="num">1</p>
-            <button class="minus">-</button>
-          </div>
-        </div>
-        <span>$1,299</span>
+        <span>${{ product.price }}</span>
       </div>
     </li>
   </ul>
 </template>
+
+<script>
+export default {
+  props: {
+    initialProducts: {
+      type: Array,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      products: this.initialProducts,
+    };
+  },
+};
+</script>
