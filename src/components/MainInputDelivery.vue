@@ -1,9 +1,15 @@
 <template>
-  <div class="part" v-show="step===2">
+  <div class="part" v-show="step === 2">
     <h3 class="form-title">運送方式</h3>
     <div class="form-container delivery-method">
       <div class="form-row">
-        <input type="radio" name="delivery" id="free-delivery"/>
+        <input
+          type="radio"
+          name="delivery"
+          id="free-delivery"
+          :value="0"
+          v-model="user.deliveryFee"
+        />
         <label class="wrapper" for="free-delivery">
           <div class="wrapper-item">
             <p>標準運送</p>
@@ -13,7 +19,13 @@
         </label>
       </div>
       <div class="form-row">
-        <input type="radio" name="delivery" id="paid-delivery"/>
+        <input
+          type="radio"
+          name="delivery"
+          id="paid-delivery"
+          :value="500"
+          v-model="user.deliveryFee"
+        />
         <label class="wrapper" for="paid-delivery">
           <div class="wrapper-item">
             <p>DHL 貨運</p>
@@ -33,6 +45,15 @@ export default {
       type: Number,
       required: true,
     },
+    initialUser: {
+      type: Object,
+      required: true,
+    },
+  },
+  data() {
+    return {
+      user: this.initialUser,
+    };
   },
 };
 </script>

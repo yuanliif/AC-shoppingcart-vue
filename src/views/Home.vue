@@ -8,9 +8,9 @@
         <form class="form" @submit.prevent>
           <!-- input group -->
           <div class="input-group">
-            <MainInputAddress :step="step" />
-            <MainInputDelivery :step="step" />
-            <MainInputPayment :step="step" />
+            <MainInputAddress :step="step" :initial-user="user" />
+            <MainInputDelivery :step="step" :initial-user="user"/>
+            <MainInputPayment :step="step" :initial-user="user"/>
           </div>
         </form>
         <!-- button -->
@@ -23,9 +23,9 @@
       <div class="right-container d-flex flex-column col-5">
         <h4 class="fw-bold">購物籃</h4>
         <!-- items -->
-        <MainCartItems :initial-products="products"/>
+        <MainCartItems :initial-products="products" @total="totalCart"/>
         <!-- sum -->
-        <MainCartSum />
+        <MainCartSum :user="user" :products="products"/>
       </div>
     </div>
   </div>
@@ -47,14 +47,14 @@ const dummyData = {
       name: "破壞補丁修身牛仔褲",
       price: 3999,
       quantity: 1,
-      image: "./../assets/images/ripped-jeans@2x.png",
+      image: "../assets/images/ripped-jeans@2x.png",
     },
     {
       id: 2,
       name: "刷色直筒牛仔褲",
       price: 1999,
       quantity: 1,
-      image: "./../assets/images/staight-jeans@2x.png",
+      image: "../assets/images/staight-jeans@2x.png",
     },
   ],
 };
@@ -74,14 +74,14 @@ export default {
     return {
       step: 1,
       products: [],
-      info: {
+      total: "",
+      user: {
         gender: "",
         name: "",
         tel: "",
         email: "",
         city: "",
         address: "",
-        method: "",
         deliveryFee: 0,
         cardName: "",
         cardNum: "",
@@ -106,8 +106,14 @@ export default {
     previousStep() {
       return this.step--;
     },
+    totalAmount(payload) {
+      console.log(payload);
+    },
+    totalCart(payload) {
+      this.products = payload
+    }
   },
-  mounted() {
+  created() {
     this.fetchData();
   },
 };
@@ -116,7 +122,7 @@ export default {
 <style scoped>
 form {
   width: 100%;
-  height: 85%;
+  height: 100%;
   display: flex;
 }
 .right-container {
