@@ -9,8 +9,8 @@
           <!-- input group -->
           <div class="input-group">
             <MainInputAddress :step="step" :initial-user="user" />
-            <MainInputDelivery :step="step" :initial-user="user"/>
-            <MainInputPayment :step="step" :initial-user="user"/>
+            <MainInputDelivery :step="step" :initial-user="user" />
+            <MainInputPayment :step="step" :initial-user="user" />
           </div>
         </form>
         <!-- button -->
@@ -23,9 +23,9 @@
       <div class="right-container d-flex flex-column col-5">
         <h4 class="fw-bold">購物籃</h4>
         <!-- items -->
-        <MainCartItems :initial-products="products" @total="totalCart"/>
+        <MainCartItems :initial-products="products" @total="totalCart" />
         <!-- sum -->
-        <MainCartSum :user="user" :products="products"/>
+        <MainCartSum :user="user" :products="products" />
       </div>
     </div>
   </div>
@@ -110,8 +110,8 @@ export default {
       console.log(payload);
     },
     totalCart(payload) {
-      this.products = payload
-    }
+      this.products = payload;
+    },
   },
   created() {
     this.fetchData();

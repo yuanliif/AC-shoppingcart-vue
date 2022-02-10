@@ -32,8 +32,8 @@ export default {
   computed: {
     total() {
       let productCost = 0;
-      let productTotle = 0;
       this.products.forEach((product) => {
+        let productTotle = 0;
         productCost += product.quantity * product.price;
         productTotle += productCost;
         this.totleCost = productTotle + this.user["deliveryFee"];
