@@ -23,7 +23,12 @@
         <div class="col-8">
           <div class="form-row">
             <label for="">姓名</label
-            ><input type="text" placeholder="請輸入姓名" v-model="user.name" />
+            ><input
+              type="text"
+              placeholder="請輸入姓名"
+              v-model="user.name"
+              required
+            />
           </div>
         </div>
       </div>

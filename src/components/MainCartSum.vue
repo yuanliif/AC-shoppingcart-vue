@@ -41,5 +41,15 @@ export default {
       return this.totleCost;
     },
   },
+  methods: {
+    sum() {
+      this.$emit("total-cost", this.totleCost);
+    },
+  },
+  watch: {
+    totleCost: function () {
+      this.sum();
+    },
+  },
 };
 </script>

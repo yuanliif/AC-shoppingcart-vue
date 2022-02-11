@@ -16,6 +16,8 @@
         <!-- button -->
         <MainButtonGroup
           :step="step"
+          :user="user"
+          :total="total"
           @next-step="nextStep"
           @previous-step="previousStep"
         />
@@ -25,7 +27,11 @@
         <!-- items -->
         <MainCartItems :initial-products="products" @total="totalCart" />
         <!-- sum -->
-        <MainCartSum :user="user" :products="products" />
+        <MainCartSum
+          :user="user"
+          :products="products"
+          @total-cost="totalCost"
+        />
       </div>
     </div>
   </div>
@@ -74,7 +80,7 @@ export default {
     return {
       step: 1,
       products: [],
-      total: "",
+      total: 0,
       user: {
         gender: "",
         name: "",
@@ -87,12 +93,6 @@ export default {
         cardNum: "",
         validity: "",
         cvc: "",
-      },
-      cart: {
-        rippedJeansAmount: 0,
-        straightJeansAmount: 0,
-        fee: 0,
-        totalAmount: 0,
       },
     };
   },
@@ -111,6 +111,9 @@ export default {
     },
     totalCart(payload) {
       this.products = payload;
+    },
+    totalCost(price) {
+      this.total = price;
     },
   },
   created() {
